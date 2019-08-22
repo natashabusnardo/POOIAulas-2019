@@ -10,7 +10,7 @@ package IntroPOO;
  * @author julia.rosa
  */
 public class Cone {
-    double g, c, r;
+    double c, r;
     int tipo;
 
     public int getTipo() {
@@ -21,7 +21,7 @@ public class Cone {
         this.tipo = tipo;
     }
 
-    public double getG() {
+    public double G() {
         g = Math.sqrt((c*c)+(r*r));
         return g;
     }
@@ -44,7 +44,7 @@ public class Cone {
     }
     
     public double AreaTotal(){
-        double AreaTotal = ((3.14*r)*(r+g));
+        double AreaTotal = ((3.14*r)*(r+G()));
         return AreaTotal;
     }
     
@@ -54,7 +54,7 @@ public class Cone {
     }
     
     public double AreaLateral(){
-        double AreaLateral = (3.14*r*g);
+        double AreaLateral = (3.14*r*G());
         return AreaLateral;
     }
     
