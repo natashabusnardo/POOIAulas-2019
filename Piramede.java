@@ -12,110 +12,9 @@ package IntroPOO;
 public class Piramede {
     private float ab;
     private float h;
-    private float a1;
-    private float b;
-    private float areaTriangulo;
-    private float areaBase;
-    private float areaTotal;
     private int tinta = 0;
-    private float valor = (float) 0;
     
-    
-    final float metrosPintados = (float) 4.76;
-    float Litros;
-    int latas;
-    float preco;
-    float volume;
-
-    public float getLitros() {
-        return Litros;
-    }
-
-    public void setLitros() {
-        this.Litros = (areaTotal / metrosPintados);
-    }
-
-    public int getLatas() {
-        return latas;
-    }
-
-    public void setLatas() {
-        this.latas = (int) Math.ceil(Litros / 18);
-    }
-
-    public float getPreco() {
-        return preco;
-    }
-
-    public void setPreco() {
-        this.preco = latas * valor;
-    }
-
-    public float getVolume() {
-        return volume;
-    }
-
-    public void setVolume() {
-        this.volume  = ((areaBase / (float) 3) * h);
-    }
-    
-
-    public float getAb() {
-        return ab;
-    }
-
-    public void setAb(float ab) {
-        this.ab = ab;
-    }
-
-    public float getH() {
-        return h;
-    }
-
-    public void setH(float h) {
-        this.h = h;
-    }
-
-    public float getA1() {
-        return a1;
-    }
-
-    public void setA1() {
-        this.a1 = (float) Math.sqrt((float) (Math.pow(h, 2)) + (float) (Math.pow(ab, 2)));
-    }
-
-    public float getB() {
-        return b;
-    }
-
-    public void setB() {
-        this.b = (ab + ab);
-    }
-
-    public float getAreaTriangulo() {
-        return areaTriangulo;
-    }
-
-    public void setAreaTriangulo() {
-        this.areaTriangulo = (b * a1) / 2;
-    }
-
-    public float getAreaBase() {
-        return areaBase;
-    }
-
-    public void setAreaBase() {
-        this.areaBase  = b * b;
-    }
-
-    public float getAreaTotal() {
-        return areaTotal;
-    }
-
-    public void setAreaTotal() {
-        this.areaTotal = areaBase + (areaTriangulo * 4);
-    }
-
+     
     public int getTinta() {
         return tinta;
     }
@@ -124,11 +23,73 @@ public class Piramede {
         this.tinta = tinta;
     }
 
-    public float getValor() {
-        return valor;
+    
+    public float getAb() {
+        return ab;
     }
 
-    public void setValor() {
+    public void setAb(float ab) {
+        this.ab = ab;
+    }
+    
+    public float getH() {
+        return h;
+    }
+
+    public void setH(float h) {
+        this.h = h;
+    }
+    
+    public double CalculoA1(){
+        double a1 = Math.sqrt((Math.pow(h, 2)) + (Math.pow(ab, 2)));
+        return a1;
+    }
+    
+    public double B(){
+        double b = ab+ab;
+        return b;
+    }
+    
+    
+    public double AreaTriangulo(){
+     double areaTriangulo = (B() * a1) / 2;
+        return areaTriangulo;
+    }
+    
+    public double AreaBase(){
+        double areaBase = B() * B();
+        return areaBase;
+    }
+    
+    public double AreaTotal(){
+        double areaTotal =  AreaBase() + (AreaTriangulo() * 4);
+        return areaTotal;
+    }
+    public double MetrosPintados(){
+        double metrosPintados = 4.76;
+    }
+    public double QuantidadeLitros(){
+        double litros = (AreaTotal() / MetrosPintados());
+        return litros;
+    }
+    
+    public double QuantidadeLatas(){
+        double latas = Math.ceil(Litros / 18);
+        return latas;
+    }
+    
+    public double Volume(){
+        double volume = (areaBase / (float) 3) * h);
+        return volume;
+    }
+   
+    public double Preco(){
+        double preco = QuantidadeLatas() * Valor();
+        return preco;
+    }
+    
+    
+    public double Valor() {
             switch (tinta) {
                 case 1:
                     valor = (float) 127.90;
@@ -143,8 +104,7 @@ public class Piramede {
                     valor = (float) 0.0;
                     break;
             }
+        return valor();
     }
-    
-    
     
 }
