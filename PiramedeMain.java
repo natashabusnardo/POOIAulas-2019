@@ -48,7 +48,7 @@ public class PiramedeMain {
         System.out.println("Area Total: "+pi.getAreaTotal());
         System.out.println("Tipo de Tinta: "+ pi.getTinta());
         System.out.println("Litros "+pi.getLitros());
-        System.out.println("Latas: "+pi.getLatas());
+        System.out.println("Latas: "+pi.getQuantidadeLatas());
         System.out.println("Preço: "+pi.getPreco());
         System.out.print("Volume: "+pi.getVolume());
     }
